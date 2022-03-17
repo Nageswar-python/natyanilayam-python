@@ -1,0 +1,301 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        {% block title %}
+        <title>Natyanilayam</title>{% endblock title %}
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+        
+		{% comment %} <!-- favicon
+		============================================ -->		
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> {% endcomment %}
+		
+		<!-- Google Fonts
+		============================================ -->		
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800" rel='stylesheet' type='text/css'>
+    
+		<!-- Fontawsome CSS
+		============================================ -->
+        <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+        <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+		
+        
+        <!-- Bootstrap CSS
+		============================================ -->		
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        
+		<!-- Plugins CSS
+		============================================ -->
+        <link rel="stylesheet" href="{% static "css/plugins.css" %}">
+        
+	    	<!-- Photo Viewer CSS
+		============================================ -->
+        <link rel="stylesheet" href="{% static "css/photoviewer.css" %}">
+        
+		<!-- Style CSS
+		============================================ -->
+        <link rel="stylesheet" href="{% static "css/style.css" %}">
+        
+		<!-- Color CSS
+		============================================ -->
+        <link rel="stylesheet" href="{% static "css/color.css" %}">
+        
+		<!-- Responsive CSS
+		============================================ -->
+        <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+
+       </head>
+    <body>
+        
+        <!--Main Wrapper Start-->
+        <div class="as-mainwrapper">
+            <!--Bg White Start-->
+            <div class="bg-white">
+                <!--Header Area Start-->
+                <header>
+                    <div class="header-top">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-5 d-none d-lg-block d-md-block">
+                                   
+                                </div>
+                                <div class="col-lg-5 col-md-7 col-12">
+                                    <div class="header-top-right">
+                                        <div class="content">
+                                            <a href="tel:9652138884"><i class="fa fa-phone"></i>9652138884</a>
+                                        </div>
+                                        <div class="content">
+                                            <a href="mailto:natyanilayam@gmail.com"><i class="fa fa-envelope"></i>natyanilayam@gmail.com</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-logo-menu sticker">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-12">
+                                    <div class="logo">
+                                        <a href="index.html"><img src="{% static "img/logo/logo.png" %}" alt="Natyanilayam"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-12">
+                                    <div class="mainmenu-area pull-right">
+                                        <div class="mainmenu d-none d-lg-block">
+                                            <nav>
+                                                <ul id="nav">
+                                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                                    <li><a href="{% url 'about' %}">About</a></li>
+                                                    <li><a href="{% url 'training' %}">Training</a></li>
+                                                    <li><a href="{% url 'events' %}">Events</a></li>
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <!-- Mobile Menu Area start -->
+                    <div class="mobile-menu-area">
+                        <div class="container clearfix">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="mobile-menu">
+                                        <nav id="dropdown">
+                                            <ul id="nav">
+                                                <li><a href="{% url 'home' %}">Home</a></li>
+                                                    <li><a href="{% url 'about' %}">About</a></li>
+                                                    <li><a href="{% url 'training' %}">Training</a></li>
+                                                    <li><a href="{% url 'events' %}">Events</a></li>
+                                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>					
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu Area end -->    
+                </header>
+                <!--End of Header Area-->
+                {% block content %}
+
+                {% endblock content %}
+                <!--Newsletter Area Start-->
+                <div class="newsletter-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5">
+                                <div class="newsletter-content">
+                                    <h3>SUBSCRIBE</h3>
+                                    <h2>TO OUR NEWSLETTER</h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-7">
+                                <div class="newsletter-form angle">
+                                    <form method="POST" action=""  class="mc-form footer-newsletter fix">
+                                        {% csrf_token %}
+                                        <div class="subscribe-form">
+                                            <input id="userEmail" type="email" name="email" placeholder="Enter your email address..." required>
+                                            <button id="submit" type="submit">SUBSCRIBE</button>
+                                        </div>    
+                                    </form>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of Newsletter Area-->
+                <!--Footer Widget Area Start-->
+                <div class="footer-widget-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-footer-widget">
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="{% static "img/logo/footer.png" %}" class="px-3 border border-rounded" alt=""></a>
+                                    </div>
+                                    <p>Dedicated institute to promote Indian traditional art Kuchipudi and encourage the unique talent of the students </p>
+                                    <div class="social-icons">
+                                        <a href="https://www.facebook.com/111764141273153/posts/112695737846660/"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="https://www.youtube.com/channel/UCvOsBYs5-Ha1kKUq9jqB4dg"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="https://www.instagram.com/accounts/login/?next=/naatyanilayam/"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="https://twitter.com/naatyanilayam?s=08"><i class="fa-brands fa-twitter"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-footer-widget">
+                                    <h3>GET IN TOUCH</h3>
+                                    <a href="tel:9652138884"><i class="fa fa-phone"></i>965-213-8884</a>
+                                    <span><i class="fa fa-envelope"></i>natyanilayam@gmail.com</span>
+                                    <span><i class="fa fa-globe"></i>www.natyanilayam.com</span>
+                                    <span><i class="fa fa-map-marker"></i>New Ashok Nagar,Eluru,A.P</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-footer-widget text-center">
+                                    <h3>Useful Links</h3>
+                                    <ul class="footer-list">
+                                        <li><a href="{% url 'training' %}">Training</a></li>
+                                        <li><a href="{% url 'events' %}">Events</a></li>
+                                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                        <li><a href="{% url 'videos' %}">Videos</a></li>
+                                        <li><a href="{% url 'join_now' %}">Join_now</a></li>
+                                        <li><a href="{% url 'about' %}">About</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="single-footer-widget">
+                                    <h3>Instagram</h3>
+                                    <div class="image-set row insta">
+                                        {% for details in details %}
+                                        <div class="col-md-3 {% if forloop.counter0 == 0%}active{% endif %}">
+                                           <a data-gallery="photoviewer" data-title="{{details.title}}" data-group="a"
+                                           href="{{details.img.url}}">
+                                          <img src="{{details.img.url}}" alt="">
+                                        </a>
+                                        </div>
+                                        {% endfor %}
+                                       </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of Footer Widget Area-->
+                <!--Footer Area Start-->
+                <footer class="footer-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-7 col-12">
+                                <span>©  2022 Natyanilayam Made with ❤️ by  <a href="#" target="_blank">Nageswararao.v</a></span>
+                            </div>
+
+                        </div>
+                    </div>
+                </footer>
+                <!--End of Footer Area-->
+            </div>   
+            <!--End of Bg White--> 
+        </div>    
+        <!--End of Main Wrapper Area--> 
+        
+       
+        
+        
+		<!-- jquery
+		============================================ -->		
+        <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+        
+		<!-- popper JS
+		============================================ -->		
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        
+		<!-- bootstrap JS
+		============================================ -->		
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        
+		
+        
+		<!-- plugins JS
+		============================================ -->		
+        <script src="{% static 'js/plugins.js' %}"></script>
+        
+		
+          <!-- photoviewer JS
+		============================================ -->		
+        <script src="{% static 'js/photoviewer.js' %}"></script>
+		<!-- main JS
+		============================================ -->		
+        <script src="{% static 'js/main.js' %}"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfTQv1UIMBhgtUdBrkDKUX4y-gLmFPynU"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script>
+			function initialize() {
+			  var mapOptions = {
+				zoom: 15,
+                controls_on_map: true,
+				scrollwheel: false,
+                stopover: true,
+				center: new google.maps.LatLng(16.7211, 81.0906),
+                stroke_options: {
+                    strokeColor: '#f10', 
+                    strokeOpacity: 0.8, 
+                    strokeWeight: 2, 
+                    fillColor: '#f10', 
+                    fillOpacity: 0.4
+                } 
+			  };
+
+			  var map = new google.maps.Map(document.getElementById('googleMap'),
+				  mapOptions);
+
+
+			  var marker = new google.maps.Marker({
+				position: map.getCenter(),
+				animation:google.maps.Animation.BOUNCE,
+				icon: '../static/img/icon/map-marker-2.png',
+				map: map
+			  });
+                
+			}
+                
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+      
+    </body>
+</html>

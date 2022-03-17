@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+    <title>About</title>{% endblock title %}
+
+
+{% block content %}
+<!--Breadcrumb Banner Area Start-->
+<div class="breadcrumb-banner-area">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="breadcrumb-text">
+                  <h1 class="text-center">ABOUT US</h1>
+                  <div class="breadcrumb-bar">
+                      <ul class="breadcrumb text-center">
+                          <li><a href="{% url 'home' %}">Home</a></li>
+                          <li>ABOUT US</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--End of Breadcrumb Banner Area-->
+<!--About Page Area Start-->
+<div class="about-page-area section-padding">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="section-title-wrapper">
+                  <div class="section-title">
+                      <h3>Who we are</h3>
+                      <p>About Natyanilayam</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-7 col-md-12 col-12">
+              <div class="about-text-container">
+                <div class="about">
+                  <h3>About Naatya Nilayam</h3>
+                  <p>Dedicated institute to promote Indian traditional art Kuchipudi and encourage the unique talent of the
+                    students under the guidance of Guru Swarnalatha whether the student is new to the dance or already
+                    professional, Guru Swarnalatha adjusts classes to suit the age and ability of the student. She will train
+                    to develop the strength of the student through her unique style of teaching kuchipudi.
+                  </p>
+                  <p class="mb-3">Kuchipudi dance was heavily influenced by the Natya Shastra theory of the classical
+                    theatrical arts, Kuchipudi makes full use of the abhinaya, four ways of conveying meaning and emotions to
+                    the audience. Angika represents the movement of the body, vachika is the use of speech which is expressed
+                    through song and miming words in Kuchipudi. The aharya abhinaya represents the meaning conveyed through
+                    the dancers’ costumes and make-up.
+                  </p>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="about">
+                      <h3>Foundation</h3>
+                      <p class="mb-3">The technique of Kuchipudi makes use of fast rhythmic footwork and sculpturesque body
+                        movements. Stylized mime, using hand gestures and subtle facial expression, is combined with more
+                        realistic acting, occasionally including dialogues spoken by the dancers. In this blend of performance
+                        techniques, Kuchipudi is unique among the other Indian dance styles.
+                      </p>
+                      <p>Historically, Kuchipudi was performed as a dance drama, with several dancers taking different roles.
+                        Kuchipudi today, is performed either as a solo or a group presentation.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="about">
+                  <h3>Kuchipudi</h3>
+                  <p class="mb-3">A multi-layered performance, Kuchipudi combines drama, dance, sign language, mime and music
+                    to create a vibrant theatrical experience for the audience. Colorful costumes, ornate headdresses, jewelry
+                    and makeup are also used to convey meaning and accentuate the rhythmic movements and intricate expressions
+                    of the artist.
+                  </p>
+                  <p>Natyanilayam was established with the main objectives of:
+                  </p>
+                  <ul>
+                    <li>To give maximum exposure to the great traditional art form all over the world</li>
+                    <li>To give strict and deciplained training to the students and to attract as many students as possible
+                      irrespective of language ,sex,religion,region,and background etc
+                    </li>
+                    <li>To give detailed knowledge about Kuchipudi dance, Carnatic music and Telugu culture by giving theory
+                      classes
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-5 col-md-12 col-12">
+              <div class="skill-image">
+                  <img src="{% static "img/gallery/gal-2.jpg"%}" alt="" class="">
+                  <img src="{% static "img/gallery/staga-1.jpg"%}" alt="" class="">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--End of About Page Area-->
+{% endblock content %}

@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+    <title> Home</title>{% endblock title %}
+
+
+{% block content %}
+
+<!--Slider Area Start-->
+
+<div class="slider-area">
+    
+    <div class="preview-2">
+         
+        <div id="nivoslider" class="slides">
+            {% for slider in slider %}
+            <div class="{% if forloop.counter0 == 1%}active{% endif %}">
+                <img src="{{slider.image.url}}" alt="" title="#{{slider.title}}"/>
+            </div>
+        
+            {% endfor %}
+        </div> 
+        {% for slider in slider %}
+        <div id="{{slider.title}}" class="nivo-html-caption nivo-caption {% if forloop.counter0 == 1%}active{% endif %}">
+            <div class="banner-content slider-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-content-wrapper">
+                                <div class="text-content">
+                                    <h1 class="title1 wow fadeInUp telugu" data-wow-duration="2000ms" data-wow-delay="0s">{{slider.main_title}}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
+        {% endfor %}
+       
+    </div>
+    
+</div>
+
+<!--End of Slider Area-->
+ <!-- Training-area -->
+ <section class="class-sec py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>Training</h3>
+                        <p>There are Two variations of Training</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card-wrapper  col-md-6">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h3 class="text-uppercase font-weight-bold">Training at School</h3>
+                        <ul class="training-list list-unstyled">
+                        <li><p>The students at NatyaNilayam are not merely trained in Kuchipudi dance, they are taught a way of living through dance.</p></li>
+                          <li><p class="py-0">A path of beauty where students learn to look at life with a different perspective, a perspective of dance which combines one’s creative imagination with harsh realities.Through their minds they imagine and with their bodies they train.</p></li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper  col-md-6">
+                <div class="card border-0 shadow mb-2">
+                    <div class="card-body">
+                        <h3 class="text-uppercase font-weight-bold">Remote Training</h3>
+                        <ul class="training-list list-unstyled">
+                        <li><p>NATYA NILAYAM presents Live Core, online certificate courses and online short term hobby courses in dance especially conceived for kids, young, adults and all age groups interested in learning dance.</p></li>
+                        <li><p>Online dance classes aims at helping a new learner to understand and practice the basics of the popular dance style through live dancing lessons.</p></li>
+                    </ul>
+                    </div>
+                </div>
+                      
+            </div>
+          
+        </div>
+    </div>
+</section>
+
+<!-- End Of Training Area -->
+<!--About Area Start--> 
+<div class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="about-container">
+                    <h3>WHY Natyanilayam ?</h3>
+                    <p class="pr-5">Dedicated institute to promote Indian traditional art Kuchipudi and encourage the unique talent of the students under the guidance of Guru Swarnalatha whether the student is new to the dance or already professional, Guru Swarnalatha adjusts classes to suit the age and ability of the student. She will train to develop the strength of the student through her unique style of teaching kuchipudi.</p>
+                    <a class="button-default" href="#">Learn Now</a>	      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of About Area-->
+<!-- Gallery-area -->
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="section-title-wrapper">
+                <div class="section-title">
+                    <h3>Gallery</h3>
+                    <p>Our Training,Performance and Learning</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-set row">
+        {% for details in details %}
+        <div class="col-md-3 {% if forloop.counter0 == 8%}active{% endif %}">
+           <a data-gallery="photoviewer" data-title="{{details.title}}" data-group="a"
+           href="{{details.img.url}}">
+          <img src="{{details.img.url}}" alt="">
+        </a>
+        </div>
+        {% endfor %}
+    
+    </div>
+</div>
+<!-- end of gallery area -->
+<!--Event Area Start-->
+<div class="event-area section-padding bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title-wrapper">
+                    <div class="section-title">
+                        <h3>OUR EVENTS</h3>
+                        <p>UpComing and Previous Events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for events in events %}
+            <div class="col-lg-4 col-md-{% if forloop.counter0 == 3%}active{% endif %}">
+                <div class="single-event-item">
+                    <div class="single-event-image">
+                        <a href="#">
+                            <img src="{{events.img.url}}" alt="">
+                            <span><span>{{events.Date}}</span>{{events.Month}}</span>
+                        </a>
+                    </div>
+                    <div class="single-event-text">
+                        <h3><a href="#">{{events.title}}</a></h3>
+                        <div class="single-item-comment-view">
+                           <span><i class="fa-regular fa-clock"></i>{{events.from_time}} - {{events.to_time}}</span>
+                           <span><i class="fa-solid fa-location-dot"></i>{{events.place}}</span>
+                       </div>
+                       <p>{{events.description}}</p>
+                       <a class="button-default" href="#">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+<!--End of Event Area-->
+
+{% endblock content %}

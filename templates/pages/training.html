@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block title %}
+    <title> Training</title>{% endblock title %}
+
+
+{% block content %}
+   <!--Breadcrumb Banner Area Start-->
+   <div class="breadcrumb-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text">
+                    <h1 class="text-center">Training</h1>
+                    <div class="breadcrumb-bar">
+                        <ul class="breadcrumb text-center">
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li>Training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!--End of Breadcrumb Banner Area--> 
+<!--About Page Area Start-->
+<div class="about-page-area section-padding">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="section-title-wrapper">
+                  <div class="section-title">
+                      <h3>What you Learn</h3>
+                      <p>How we give Training </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-7 col-md-12 col-12">
+              <div class="about-text-container">
+               
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="about">
+                      <h3>Courses List</h3>
+                     
+                      <p class="mb-3">Natyanilayam gives Best Training to get the Certificate in:
+                      </p>
+                      <ul>
+                        <li>Certificate in Kuchipudi</li>
+                        <li>Diploma in Kuchipudi
+    
+                        </li>
+                       
+                      </ul>
+                    </div>
+                    <div class="about">
+                      <h3>How to connect the class</h3>
+                      <p>The intent of the Natyanilayam has been to create a perfect performer, an adept dancer, with a thorough knowledge of the theoretical, literary and musical basis of the traditional art.
+                      </p>
+                      
+                    </div>
+                    <div class="about">
+                      <h3>How to choose the Course</h3>
+                      <p class="mb-3">Choosing the right course is crucial to enjoying your time at the institute so make sure you really explore your options, even if you think you know what you want to learn and enjoy.
+                      </p>
+                    
+                    </div>
+                    <div class="about">
+                      <h3>How to Apply</h3>
+                      <p class="mb-3">Training will be given in two levels. Level one regarding basic and Level two is the advanced training along with abhinaya and theory knowledge of Natyasastra.
+                      </p>
+                    
+                    </div>
+                    
+                  </div>
+                </div>
+                
+              </div>
+          </div>
+          <div class="col-lg-5 col-md-12 col-12">
+              <div class="skill-image">
+                  <img src="{% static "img/gallery/train-9.jpg"%}" alt="" class="">
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!--End of About Page Area-->
+{% endblock content %}
